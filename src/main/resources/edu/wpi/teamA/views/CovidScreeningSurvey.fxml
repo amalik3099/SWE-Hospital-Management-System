@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane id="CovidPane" fx:id="dialogPane" visible="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.CovidSurveyController">
+   <children>
+      <AnchorPane minHeight="509.0" prefHeight="536.0" prefWidth="846.0" style="-fx-background-color: #002d59;">
+         <children>
+            <ScrollPane fx:id="covidScrollPane" hbarPolicy="NEVER" prefHeight="536.0" prefWidth="846.0" style="-fx-background-color: #002d59;" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+               <content>
+                  <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="820.0">
+                     <children>
+                        <GridPane prefHeight="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="100.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane prefHeight="453.0" style="-fx-background-color: #ffffff; -fx-border-color: #082c5c; -fx-border-width: 10; -fx-background-radius: 25;">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="355.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="195.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="129.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="129.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="145.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="213.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="213.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced any of the following symptoms in the past 48 hours?" wrappingWidth="300.0">
+                                       <font>
+                                          <Font name="Ebrima" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- diarrhea" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- fever or chills" wrappingWidth="136.1484375" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- cough" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- shortness or breath or difficulty breathing" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- fatigue" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- muscle or body aches" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- new loss of taste or smell" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- sore throat" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- headache" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- congestion or runny nose" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- nasea or vomiting" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <JFXButton fx:id="qOneYes" onAction="#qOneYesPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="Yes" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="40.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="qOneNo" layoutX="20.0" layoutY="308.0" onAction="#qOneNoPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="No" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="160.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="350.0" style="-fx-background-color: #ffffff; -fx-border-color: #082c5c; -fx-border-width: 10; -fx-background-radius: 25;" GridPane.rowIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="85.0" minHeight="50.0" prefHeight="56.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="136.0" minHeight="25.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="136.0" minHeight="30.0" prefHeight="20.0" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="121.0" minHeight="30.0" prefHeight="55.0" vgrow="ALWAYS" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="In the past 14 days, have you come into close contact (within 6 feet) with someone for a total of 15 minutes or longer who has " wrappingWidth="325.0" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="Ebrima" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- tested positive for COVID-19" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" top="15.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- has shown any symptoms of COVID-19" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="   or" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="35.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <JFXButton fx:id="qTwoYes" onAction="#qTwoYesPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="Yes" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="40.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="qTwoNo" onAction="#qTwoNoPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="No" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="160.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </GridPane>
+                              <GridPane prefHeight="117.0" prefWidth="820.0" style="-fx-background-color: #ffffff; -fx-border-color: #082c5c; -fx-border-width: 10; -fx-background-radius: 25;" GridPane.rowIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Are you currently isolating because you may have been exposed to someone with COVID-19?" wrappingWidth="300.0">
+                                       <font>
+                                          <Font name="Ebrima" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <JFXButton fx:id="qThreeYes" onAction="#qThreeYesPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="Yes" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="40.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="qThreeNo" onAction="#qThreeNoPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="No" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="160.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="224.0" style="-fx-background-color: #ffffff; -fx-border-color: #082c5c; -fx-border-width: 10; -fx-background-radius: 25;" GridPane.rowIndex="3">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Are you currently waiting on the results of a COVID-19 test?" wrappingWidth="300.0" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="Ebrima" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton fx:id="qFourYes" onAction="#qFourYesPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="Yes" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="40.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="qFourNo" onAction="#qFourNoPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="No" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="160.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="-10.0" />
+                                 </GridPane.margin>
+                              </GridPane>
+                              <GridPane prefHeight="300.0" style="-fx-background-color: #ffffff; -fx-border-color: #082c5c; -fx-border-width: 10;" GridPane.rowIndex="4">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Will you practice social distancing and wear a mask for the duration of your time at the hospital?" wrappingWidth="300.0">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="Ebrima" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton fx:id="qFiveYes" onAction="#qFiveYesPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="Yes" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="40.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="qFiveNo" onAction="#qFiveNoPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c;" styleClass="covidButton" text="No" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="160.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="-10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </GridPane>
+                              <GridPane prefHeight="182.0" style="-fx-background-color: #002d59; -fx-border-color: #082c5c; -fx-border-width: 10; -fx-border-radius: 15;" GridPane.rowIndex="5">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="269.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="281.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <JFXButton fx:id="cancelButton" onAction="#cancelPress" prefHeight="37.0" prefWidth="79.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c; -fx-background-color: #ffffff;" styleClass="covidButton" text="Cancel" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" right="100.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="submitButton" onAction="#submitPress" prefHeight="37.0" prefWidth="74.0" ripplerFill="#082c5c" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #082c5c; -fx-background-color: #f6bd38;" styleClass="covidButton" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="160.0" />
+                                       </GridPane.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane prefHeight="40.0" prefWidth="846.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="509.0" prefWidth="846.0" text="COVID Screening Survey" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

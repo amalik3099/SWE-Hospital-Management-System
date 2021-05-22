@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faulkner Map to Hospital</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+            transition: margin-right .5s;
+            z-index: 1;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .controls {
+            margin: 10px 2%;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .centerImg{
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18pt' height='18pt' viewBox='0 0 18 18' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(102, 102, 102);fill-opacity:1;' d='M 8.25 0.75 L 8.25 2.273438 C 5.097656 2.613281 2.613281 5.097656 2.273438 8.25 L 0.75 8.25 L 0.75 9.75 L 2.273438 9.75 C 2.613281 12.902344 5.097656 15.386719 8.25 15.726562 L 8.25 17.25 L 9.75 17.25 L 9.75 15.726562 C 12.902344 15.386719 15.386719 12.902344 15.726562 9.75 L 17.25 9.75 L 17.25 8.25 L 15.726562 8.25 C 15.386719 5.097656 12.902344 2.613281 9.75 2.273438 L 9.75 0.75 Z M 9 3.75 C 11.925781 3.75 14.25 6.074219 14.25 9 C 14.25 11.925781 11.925781 14.25 9 14.25 C 6.074219 14.25 3.75 11.925781 3.75 9 C 3.75 6.074219 6.074219 3.75 9 3.75 Z M 9 6 C 7.34375 6 6 7.34375 6 9 C 6 10.65625 7.34375 12 9 12 C 10.65625 12 12 10.65625 12 9 C 12 7.34375 10.65625 6 9 6 Z M 9 6 '/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .centerImg:hover{
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18pt' height='18pt' viewBox='0 0 18 18' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(0,0,0);fill-opacity:1;' d='M 8.25 0.75 L 8.25 2.273438 C 5.097656 2.613281 2.613281 5.097656 2.273438 8.25 L 0.75 8.25 L 0.75 9.75 L 2.273438 9.75 C 2.613281 12.902344 5.097656 15.386719 8.25 15.726562 L 8.25 17.25 L 9.75 17.25 L 9.75 15.726562 C 12.902344 15.386719 15.386719 12.902344 15.726562 9.75 L 17.25 9.75 L 17.25 8.25 L 15.726562 8.25 C 15.386719 5.097656 12.902344 2.613281 9.75 2.273438 L 9.75 0.75 Z M 9 3.75 C 11.925781 3.75 14.25 6.074219 14.25 9 C 14.25 11.925781 11.925781 14.25 9 14.25 C 6.074219 14.25 3.75 11.925781 3.75 9 C 3.75 6.074219 6.074219 3.75 9 3.75 Z M 9 6 C 7.34375 6 6 7.34375 6 9 C 6 10.65625 7.34375 12 9 12 C 10.65625 12 12 10.65625 12 9 C 12 7.34375 10.65625 6 9 6 Z M 9 6 '/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .centerImgBlue{
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18pt' height='18pt' viewBox='0 0 18 18' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style=' stroke:none;fill-rule:nonzero;fill:rgb(77,144,245);fill-opacity:1;' d='M 8.25 0.75 L 8.25 2.273438 C 5.097656 2.613281 2.613281 5.097656 2.273438 8.25 L 0.75 8.25 L 0.75 9.75 L 2.273438 9.75 C 2.613281 12.902344 5.097656 15.386719 8.25 15.726562 L 8.25 17.25 L 9.75 17.25 L 9.75 15.726562 C 12.902344 15.386719 15.386719 12.902344 15.726562 9.75 L 17.25 9.75 L 17.25 8.25 L 15.726562 8.25 C 15.386719 5.097656 12.902344 2.613281 9.75 2.273438 L 9.75 0.75 Z M 9 3.75 C 11.925781 3.75 14.25 6.074219 14.25 9 C 14.25 11.925781 11.925781 14.25 9 14.25 C 6.074219 14.25 3.75 11.925781 3.75 9 C 3.75 6.074219 6.074219 3.75 9 3.75 Z M 9 6 C 7.34375 6 6 7.34375 6 9 C 6 10.65625 7.34375 12 9 12 C 10.65625 12 12 10.65625 12 9 C 12 7.34375 10.65625 6 9 6 Z M 9 6 '/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        input[type="radio" i] {
+            background-color: initial;
+            cursor: default;
+            appearance: auto;
+            box-sizing: border-box;
+            margin: 0px 5px 0px 10px;
+            padding: initial;
+            border: initial;
+        }
+
+        #origin-input{
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 2%;
+            /*margin-right: 1%;*/
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 60%;
+            max-width: 60%;
+        }
+
+        #origin-input:focus{
+            border-color: #2269a1;
+        }
+
+        #mode-selector {
+            color: #fff;
+            background-color: #2269a1;
+            /*margin-left: 10px;*/
+            padding: 0px 11px 0px 11px;
+            max-width: 45%;
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*text-align:center;*/
+            /*vertical-align:middle;*/
+        }
+
+        #dest-selector {
+            color: #fff;
+            background-color: #2269a1;
+            /*margin-left: 10px;*/
+            padding: 0px 11px 0px 11px;
+            margin-right: 2%;
+            transform: translateY(0px);
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*text-align:center;*/
+            /*vertical-align:middle;*/
+        }
+
+        #mode-selector,
+        #dest-selector label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*line-height: 13px;*/
+        }
+        #right-panel {
+            font-family: "Roboto", "sans-serif";
+            line-height: 30px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            overflow: -moz-scrollbars-none;
+            /*padding-top: 40px;*/
+        }
+        #right-panel::-webkit-scrollbar { /* WebKit */
+            width: 0;
+            height: 0;
+        }
+
+        #right-panel select,
+        #right-panel input {
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        #right-panel select {
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        #right-panel {
+            height: 100%;
+            float: right;
+            width: 0%;
+            min-width: 0px;
+            overflow: auto;
+            z-index: 3;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 930px) {
+            #origin-input{
+                background-color: #fff;
+                font-family: Roboto;
+                font-size: 15px;
+                font-weight: 300;
+                margin-left: 2%;
+                margin-right: 2%;
+                padding: 0 11px 0 13px;
+                text-overflow: ellipsis;
+                width: 96%;
+                min-width: 96%;
+            }
+
+            #origin-input:focus{
+                border-color: #2269a1;
+            }
+
+            #mode-selector {
+                color: #fff;
+                background-color: #2269a1;
+                /*margin-left: 10px;*/
+                padding: 0px 11px 0px 11px;
+                max-width: 45%;
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*text-align:center;*/
+                /*vertical-align:middle;*/
+            }
+
+            #dest-selector {
+                color: #fff;
+                background-color: #2269a1;
+                /*margin-left: 10px;*/
+                padding: 0px 11px 0px 11px;
+                max-width: 45%;
+                min-width: 225px;
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*text-align:center;*/
+                /*vertical-align:middle;*/
+            }
+
+            #mode-selector,
+            #dest-selector label {
+                font-family: Roboto;
+                font-size: 10px;
+                font-weight: 300;
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*line-height: 13px;*/
+            }
+            #right-panel {padding-top: 15px;}
+            #right-panel {font-size: 18px;}
+
+        }
+
+        @media print {
+            #map {
+                height: 500px;
+                margin: 0;
+            }
+
+            #right-panel {
+                float: none;
+                width: auto;
+            }
+        }
+
+        .closeButton {
+            visibility: hidden;
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 35px;
+            /*margin-left: 50px;*/
+        }
+
+        /* The button used to open the sidebar */
+        .openButton {
+            /*transform: translateY(0px);*/
+            color: #fff;
+            background-color: #2269a1;
+            position: absolute;
+            top: 54px;
+            right: 0px;
+            visibility: hidden;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 0px 11px 0px 11px;
+            margin: 10px 2%;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        /*#openBtn {*/
+        /*    transform: translateY(0px);*/
+        /*}*/
+    </style>
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script
+        // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+        const hospital = { lat: 42.30151069279066, lng: -71.12834705520817 };
+        var hospitalBounds = 0;
+        var ACHandler;
+
+        function resizeNav(isOpening) {
+            var rightPanel = document.getElementById("right-panel");
+            var open = document.getElementById("openBtn");
+            var close = document.getElementById("closeBtn");
+            if (isOpening){
+                rightPanel.style.width = '20%';
+                rightPanel.style.minWidth = '360px';
+                open.style.visibility = "hidden";
+                close.style.visibility = "visible";
+                ACHandler.map.setZoom(18);
+                ACHandler.map.panTo(hospital);
+            }
+            else {
+                rightPanel.style.width = '0%';
+                rightPanel.style.minWidth = '0px';
+                open.style.visibility = "visible";
+                close.style.visibility = "hidden";
+            }
+        }
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                mapTypeControl: false,
+                center: hospital,
+                zoom: 18,
+                maxZoom: 20,
+                gestureHandling: "greedy",
+                fullscreenControl: false,
+                streetViewControl: false,
+                mapId: "d0c86b15b929c900"
+            });
+            const centerControlDiv = document.createElement("div");
+            CenterControl(centerControlDiv, map);
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+            ACHandler = new AutocompleteDirectionsHandler(map);
+            hospitalBounds = map.getBounds();
+            var isCentered = false;
+
+            const imageBounds = {
+                north: 42.30288363971066,
+                south: 42.300415468921955,
+                east: -71.1259630353565,
+                west: -71.13080617691226,
+            };
+            var srcImage = 'https://i.imgur.com/OkbD9Q3.png';
+            hospitalOverlay = new google.maps.GroundOverlay(
+                srcImage,
+                imageBounds
+            );
+            hospitalOverlay.setMap(map);
+            google.maps.event.addListenerOnce(map, 'tilesloaded', () => {
+                console.log("All tiles loaded in.");
+                hospitalBounds = map.getBounds();
+            });
+
+            google.maps.event.addListener(map, 'idle', () => {
+                if(hospitalBounds.contains(map.getCenter())){
+                    if (!isCentered && map.getZoom() > 16) {
+                        document.getElementById("center-button").className = "centerImgBlue";
+                        isCentered = true;
+                    }
+                } else {
+                    if (isCentered) {
+                        document.getElementById("center-button").className = "centerImg";
+                        isCentered = false;
+                    }
+                }
+            });
+            google.maps.event.addListener(map, 'zoom_changed', function() {
+                console.log(map.getZoom())
+                var zoom = map.getZoom();
+                if (zoom > 16) {
+                    hospitalOverlay.setMap(map);
+                } else {
+                    hospitalOverlay.setMap(null);
+                }
+            });
+        }
+
+        function goToID(placeID) {
+            ACHandler.originPlaceId = placeID;
+            ACHandler.route();
+        }
+
+        function CenterControl(controlDiv, map) {
+            // Set CSS for the control border.
+            // Set CSS for the control border.
+            const controlUI = document.createElement("div");
+            controlUI.style.backgroundColor = "#fff";
+            controlUI.style.border = "2px solid #fff";
+            controlUI.style.margin = "10px 10px 30px 10px";
+            controlUI.style.borderRadius = "3px";
+            controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+            controlUI.style.cursor = "pointer";
+            controlUI.style.textAlign = "center";
+            controlUI.title = "Click to recenter the map";
+            controlUI.style.width = "36px";
+            controlUI.style.height = "36px";
+            controlUI.style.backgroundRepeat = "no-repeat";
+            controlUI.style.backgroundPosition = "center";
+            controlUI.className = "centerImgBlue";
+            controlUI.id = "center-button";
+            controlDiv.appendChild(controlUI);
+
+            // Setup the click event listeners: simply set the map to Chicago.
+            controlUI.addEventListener("click", () => {
+                map.setZoom(18);
+                map.panTo(hospital);
+            });
+        }
+
+        class AutocompleteDirectionsHandler {
+            constructor(map) {
+                this.map = map;
+                this.originPlaceId = "";
+                this.travelMode = google.maps.TravelMode.DRIVING;
+                this.destination =  {lat: 42.301779196576774, lng: -71.12740383118982};
+                this.directionsService = new google.maps.DirectionsService();
+                this.directionsRenderer = new google.maps.DirectionsRenderer();
+                this.directionsRenderer.setMap(map);
+                this.directionsRenderer.setPanel(document.getElementById("right-panel"));
+                // const originInput = document.getElementById("origin-input");
+                // const originAutocomplete = new google.maps.places.Autocomplete(
+                //     originInput
+                // );
+                // Specify just the place data fields that you need.
+                // originAutocomplete.setFields(["place_id"]);
+                const modeSelector = document.getElementById("mode-selector");
+                const destSelector = document.getElementById("dest-selector");
+                this.setupClickModeListener(
+                    "changemode-driving",
+                    google.maps.TravelMode.DRIVING
+                );
+                this.setupClickModeListener(
+                    "changemode-transit",
+                    google.maps.TravelMode.TRANSIT
+                );
+                this.setupClickDestListener(
+                    "dest-garage",
+                    {lat: 42.301779196576774, lng: -71.12740383118982}
+                );
+                this.setupClickDestListener(
+                    "dest-valet",
+                    {lat: 42.301215096146095, lng: -71.12781441808886}
+                );
+                //this.setupPlaceChangedListener(originAutocomplete, "ORIG");
+                this.map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(
+                    modeSelector
+                );
+                // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
+                //     originInput
+                // );
+                this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+                    destSelector
+                );
+            }
+            // Sets a listener on a radio button to change the filter type on Places
+            // Autocomplete.
+            setupClickModeListener(id, mode) {
+                const radioButton = document.getElementById(id);
+                radioButton.addEventListener("click", () => {
+                    this.travelMode = mode;
+                    this.route();
+                });
+            }
+            setupClickDestListener(id, dest) {
+                const radioButton = document.getElementById(id);
+                radioButton.addEventListener("click", () => {
+                    alert(dest.lat == 42.301779196576774 ? "dest-garage" : "dest-valet")
+                    this.destination = dest
+                    this.route();
+                });
+            }
+            setupPlaceChangedListener(autocomplete, mode) {
+                autocomplete.bindTo("bounds", this.map);
+                autocomplete.addListener("place_changed", () => {
+                    const place = autocomplete.getPlace();
+
+                    if (!place.place_id) {
+                        window.alert("Please select an option from the dropdown list.");
+                        return;
+                    }
+
+                    if (mode === "ORIG") {
+                        this.originPlaceId = place.place_id;
+                    }
+                    this.route();
+                });
+            }
+            route() {
+                if (!this.originPlaceId) {
+                    return;
+                }
+                const me = this;
+                this.directionsService.route(
+                    {
+                        origin: { placeId: this.originPlaceId },
+                        destination: this.destination,
+                        travelMode: this.travelMode,
+                        transitOptions: {
+                            modes: ['BUS'],
+                            routingPreference: 'LESS_WALKING'
+                        },
+                    },
+                    (response, status) => {
+                        if (status === "OK") {
+                            console.log("response:")
+                            console.log(response);
+                            var steps = response.routes[0].legs[0].steps;
+                            response.routes[0].legs[0].end_address = "Brigham and Women's Faulkner Hospital - "
+                            if (this.travelMode == google.maps.TravelMode.DRIVING){
+                                steps[steps.length - 1].instructions = "Turn <b>left</b> into hospital" +
+                                    "<div style=\"font-size:0.9em\">Follow signs to the ";
+                                steps[steps.length - 1].instructions += this.destination.lat == 42.301779196576774 ?
+                                    "parking garage and park inside." : "valet service.";
+                                steps[steps.length - 1].instructions += "</div><hr>Fill out <b>Covid Survey</b> " +
+                                    "before entering hospital!<div style=\"font-size:0.9em\">" +
+                                    "When survey is accepted, proceed to designated entrance.</div>";
+                            }
+                            else {
+                                steps[steps.length - 1].instructions = "Walk from Bus Stop to Hospital.\n\n" +
+                                    "Fill out Covid Survey BEFORE entering hospital!\n\n" +
+                                    "When survey is accepted, proceed to designated entrance.";
+                            }
+                            console.log(this.destination)
+                            response.routes[0].legs[0].end_address +=
+                                this.destination.lat == 42.301779196576774 ?
+                                    "Parking Garage" : "Valet Service"
+
+                            //steps[steps.length - 1].instructions += "";
+                            response.routes[0].legs[0].steps = steps;
+                            document.getElementById("openBtn").style.visibility = "visible";
+                            me.directionsRenderer.setDirections(response);
+                            //resizeNav(true);
+                        } else {
+                            window.alert("Directions request failed due to " + status);
+                        }
+                    }
+                );
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="display: none">
+<!--    <input-->
+<!--            id="origin-input"-->
+<!--            class="controls"-->
+<!--            type="text"-->
+<!--            placeholder="Enter an origin location"-->
+<!--    />-->
+
+    <div id="mode-selector" class="controls">
+        <input
+                type="radio"
+                name="type"
+                id="changemode-driving"
+                checked="checked"
+        />
+        <label for="changemode-driving">Driving</label>
+        <div style="border-left:1px solid #e6e6e6; height:80%; margin-left: 10px"></div>
+        <input type="radio" name="type" id="changemode-transit" />
+        <label for="changemode-transit">Transit</label>
+    </div>
+    <div id="dest-selector" class="controls">
+        <label>Destination: </label>
+        <input
+                type="radio"
+                name="typeDest"
+                id="dest-garage"
+                checked="checked"
+        />
+        <label for="dest-garage">Garage</label>
+        <div style="border-left:1px solid #e6e6e6; height:80%; margin-left: 10px"></div>
+        <input type="radio" name="typeDest" id="dest-valet" />
+        <label for="dest-valet">Valet</label>
+    </div>
+</div>
+<button id="openBtn" class="openButton" onclick="resizeNav(true)">&#9776; Directions</button>
+<div id="right-panel">
+    <a href="javascript:void(0)" id="closeBtn" class="closeButton" onclick="resizeNav(false)">&#10799;</a>
+</div>
+<div id="map">
+</div>
+
+
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_srKE0wfKrqIWtuzewVKnuJKnnC3mMSQ&callback=initMap&libraries=places&v=beta&map_ids=d0c86b15b929c900"
+        async
+></script>
+</body>
+</html>

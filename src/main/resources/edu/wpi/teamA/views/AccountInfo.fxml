@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="accountInfoPane" fx:id="accountInfoPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #1e3c59;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.RealAccountInfoController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="25.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="55.0" />
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="20.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="107.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Label contentDisplay="GRAPHIC_ONLY" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label contentDisplay="GRAPHIC_ONLY" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXButton fx:id="logoutButton" accessibleText="continueAsGuest" graphicTextGap="5.0" onAction="#handleLogoutAction" ripplerFill="#f6bd38" text="Logout" textFill="#f6bd38" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" />
+               </GridPane.margin>
+               <graphic>
+                  <MaterialDesignIconView fill="#f6bd38" glyphName="CLOSE" size="27" />
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="settingsButton" accessibleText="continueAsGuest" contentDisplay="RIGHT" graphicTextGap="5.0" onAction="#handleSettingsButton" ripplerFill="#f6bd38" text="Settings" textFill="#f6bd38" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6bd38" glyphName="SETTINGS" size="27" />
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="25.0" right="25.0" />
+               </GridPane.margin>
+            </JFXButton>
+            <Label fx:id="username" text="Username" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="13.0" left="110.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="email" text="email@email.com" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="110.0" top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="40.0" left="90.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </Text>
+            <Circle fx:id="pfpCircle" fill="#0067b1" radius="75.0" stroke="#f6bd38" strokeType="INSIDE" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowSpan="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="25.0" top="25.0" />
+               </GridPane.margin>
+            </Circle>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Text>
+            <Label fx:id="name" text="Jonathan Doverton" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="50.0" top="18.0" />
+               </GridPane.margin>
+            </Text>
+            <Label fx:id="accountType" text="Employee" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="65.0" top="15.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXTextField fx:id="usernameEdit" focusColor="#f6bd38" style="-fx-background-color: white;" unFocusColor="WHITE" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="7.0" left="105.0" right="50.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="emailEdit" focusColor="#f6bd38" style="-fx-background-color: white;" unFocusColor="WHITE" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="105.0" right="50.0" top="22.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="nameEdit" focusColor="#f6bd38" style="-fx-background-color: white;" unFocusColor="WHITE" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="60.0" right="50.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXButton fx:id="uploadPfp" onAction="#handleUploadPfp" ripplerFill="#f6bd38" text="Upload" textFill="#f6bd38" visible="false" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="76.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="closeButton" accessibleText="continueAsGuest" graphicTextGap="5.0" onAction="#handleCloseAction" ripplerFill="#f6bd38" text="Close" textFill="#f6bd38" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+               <graphic>
+                  <MaterialDesignIconView fill="#f6bd38" glyphName="CHEVRON_LEFT" size="27" />
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

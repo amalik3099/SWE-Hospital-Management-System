@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.web.WebView?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane id="pathfindingPane" fx:id="contentPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="889.0" prefWidth="1200.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.PathfindingController">
+    <children>
+      <AnchorPane fx:id="mapAnchor" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+             <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pannable="true" style="-fx-background-color: #ffffff;" styleClass="mapScrollPane" vbarPolicy="NEVER" vvalue="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <content>
+                  <Group fx:id="group">
+                     <children>
+                        <StackPane fx:id="stackPane" prefHeight="324.0" prefWidth="503.0" style="-fx-background-color: #000000">
+                           <children>
+                               <ImageView fx:id="mapImg" fitHeight="871.0" fitWidth="1058.0" focusTraversable="true" opacity="0.99" preserveRatio="true" smooth="false">
+                                <image>
+                                    <Image url="@../assets/img/FaulknerCampus.png" />
+                                </image>
+                                <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                </cursor>
+                                <viewport>
+                                    <Rectangle2D />
+                                </viewport>
+                         </ImageView>
+                        <StackPane fx:id="floorOneStack" opacity="0.0" StackPane.alignment="BOTTOM_CENTER">
+                           <children>
+                              <ImageView fx:id="floorOneMain" fitHeight="523.0" fitWidth="872.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="27.0" translateY="125.0">
+                                 <image>
+                                    <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor1/Floor1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="floorTwoStack" opacity="0.0">
+                           <children>
+                              <ImageView fx:id="floorTwoMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="27.0" translateY="126.0">
+                                 <image>
+                                    <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor2/Floor2.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="floorThreeStack" opacity="0.0">
+                           <children>
+                              <ImageView fx:id="floorThreeMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="128.0">
+                                 <image>
+                                    <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor3/Floor3.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="floorFourStack" opacity="0.0">
+                           <children>
+                              <ImageView fx:id="floorFourMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="121.0">
+                                 <image>
+                                    <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor4/Floor4.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="floorFiveStack" opacity="0.0">
+                            <children>
+                                <ImageView fx:id="floorFiveMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="122.0">
+                                   <image>
+                                      <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor5/Floor5.png" />
+                                   </image>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+                        <Pane fx:id="overlayPaneTwo" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Group>
+                  </content>
+              </ScrollPane>
+
+            <JFXNodesList fx:id="floorSelector" alignment="BOTTOM_LEFT" spacing="8.0" styleClass="floorList" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <JFXButton fx:id="btnExpand" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleExpand" styleClass="floor" textFill="WHITE">
+                      <graphic>
+                          <MaterialDesignIconView fx:id="chevronIcon" fill="WHITE" glyphName="CHEVRON_UP" size="32" text="" />
+                      </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="groundButton" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleGroundFloor" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="G" textFill="WHITE">
+
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="f1Button" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleFloor1" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F1" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+
+                  <JFXButton fx:id="f2Button" buttonType="RAISED" onAction="#handleFloor2" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 50; -fx-border-color: #ffffff;" text="F2" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="f3Button" buttonType="RAISED" onAction="#handleFloor3" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F3" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="f4Button" buttonType="RAISED" onAction="#handleFloor4" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F4" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="f5Button" buttonType="RAISED" onAction="#handleFloor5" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F5" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </JFXNodesList>
+            <JFXNodesList fx:id="filterList" alignment="CENTER_RIGHT" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="25.0">
+               <children>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY">
+                     <graphic>
+                        <MaterialDesignIconView fill="#616161" glyphName="LAYERS" size="40" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXCheckBox fx:id="restCheck" contentDisplay="RIGHT" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleMapFilter" prefWidth="115.0" selected="true" style="-fx-background-color: #FFFFFF;" text="Restrooms" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="elevCheck" contentDisplay="RIGHT" layoutX="17.0" layoutY="60.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleMapFilter" prefWidth="115.0" selected="true" style="-fx-background-color: #FFFFFF;" text="Elevators" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="stairCheck" contentDisplay="RIGHT" layoutX="21.0" layoutY="78.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleMapFilter" prefWidth="115.0" selected="true" style="-fx-background-color: #FFFFFF;" text="Stairs" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXCheckBox>
+               </children>
+            </JFXNodesList>
+            <VBox fx:id="directions" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="250.0" prefWidth="250.0" style="-fx-background-color: transparent;" styleClass="textDirectionsBox" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <children>
+                      <ListView fx:id="directionList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="250.0" prefHeight="400.0" prefWidth="250.0" style="-fx-border-color: #000; -fx-border-width: 5;" />
+                      <HBox fx:id="buttonRow" alignment="CENTER" spacing="5" visible="false">
+                          <children>
+                              <JFXButton fx:id="btnBack" buttonType="RAISED" disable="true" onAction="#handleBack" prefHeight="23.0" prefWidth="76.0" ripplerFill="#218fd1" style="-fx-background-color: #24c985;" styleClass="directionsButtons" text="Back" textFill="WHITE">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnNext" buttonType="RAISED" onAction="#handleNext" prefHeight="23.0" prefWidth="76.0" ripplerFill="#20d338" style="-fx-background-color: #24c985;" styleClass="directionsButtons" text="Next" textFill="WHITE">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </JFXButton>
+                          </children>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                      </HBox>
+                  </children>
+              </VBox>
+            <FlowPane fx:id="buttonRow2" alignment="BOTTOM_RIGHT" prefWrapLength="175.0" styleClass="naviButtonsBox" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleIncreaseSize" opacity="0.75" styleClass="naviButtons" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView fill="#616161" glyphName="PLUS" size="35" textAlignment="CENTER" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleDecreaseSize" opacity="0.75" styleClass="naviButtons" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView fill="#616161" glyphName="MINUS" size="35" textAlignment="CENTER" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleOgRatio" opacity="0.75" styleClass="naviButtons" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView fill="#616161" glyphName="IMAGE_FILTER_CENTER_FOCUS" size="35" textAlignment="CENTER" />
+                     </graphic>
+                  </Button>
+               </children>
+            </FlowPane>
+             <GridPane fx:id="surveyGridPane" style="-fx-background-color: rgba(100, 100, 100, .5);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <columnConstraints>
+                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                 <children>
+                     <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="80.0" style="-fx-background-color: #FFFFFF;">
+                         <children>
+                             <JFXSpinner radius="40.0">
+                                 <HBox.margin>
+                                     <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                             </JFXSpinner>
+                             <Label fx:id="takeSurveyLabel" contentDisplay="RIGHT" graphicTextGap="0.0" prefHeight="48.0" prefWidth="145.0" text="Awaiting" textAlignment="CENTER" wrapText="true">
+                                 <graphic>
+                                     <JFXButton onAction="#goToSurvey" text="Covid Survey" textFill="blue" underline="true" />
+                                 </graphic>
+                             </Label>
+                         </children>
+                         <effect>
+                             <DropShadow />
+                         </effect>
+                     </HBox>
+                 </children>
+             </GridPane>
+            <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+
+    <JFXButton fx:id="btnToWebView" graphicTextGap="8.0" layoutX="30.0" layoutY="835.0" onAction="#handleWebView" prefHeight="27.0" style="-fx-background-color: #2269a1;" text="Global Maps" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="70.0">
+         <graphic>
+            <MaterialDesignIconView fill="WHITE" glyphName="VECTOR_ARRANGE_BELOW" size="14" translateX="4.0" />
+         </graphic>
+      </JFXButton>
+        <JFXButton fx:id="btnToInterior" graphicTextGap="8.0" minWidth="109.0" onAction="#handleWebView" prefHeight="27.0" style="-fx-background-color: #2269a1;" text="Interior Maps" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="70.0">
+            <graphic>
+                <MaterialDesignIconView fill="WHITE" glyphName="VECTOR_DIFFERENCE_BA" size="14" translateX="4.0" />
+            </graphic>
+      </JFXButton>
+        <VBox fx:id="showTextMobile" alignment="TOP_CENTER" layoutY="864.0" spacing="15" style="-fx-background-color: #002d59;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <JFXButton fx:id="btnShowText" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#handleShowText" prefWidth="350.0">
+                    <graphic>
+                        <Separator mouseTransparent="true" prefHeight="7.0" prefWidth="100.0" style="-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: #ffffff; -fx-border-radius: 2; -fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                    </graphic>
+                </JFXButton>
+            </children>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+        </VBox>
+      <AnchorPane fx:id="searchPane" layoutX="15.0" layoutY="50.0" prefHeight="782.0" prefWidth="250.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <MaterialDesignIconView fill="WHITE" glyphName="MAGNIFY" layoutY="5.0" size="15" stroke="WHITE" strokeWidth="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <JFXTextField fx:id="originInput" layoutX="25.0" prefHeight="27.0" prefWidth="190.0" promptText="Enter your current location" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+               <padding>
+                  <Insets left="5.0" right="25.0" />
+               </padding></JFXTextField>
+            <MaterialDesignIconView fill="WHITE" glyphName="MAP_MARKER_RADIUS" layoutY="80.0" size="15" stroke="WHITE" strokeWidth="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="90.0" />
+            <JFXTextField fx:id="destinationInput" layoutX="25.0" layoutY="75.0" prefHeight="27.0" prefWidth="190.0" promptText="Enter desired location" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0">
+               <padding>
+                  <Insets left="5.0" right="25.0" />
+               </padding></JFXTextField>
+            <Line endY="40.0" fill="WHITE" layoutX="6.0" layoutY="30.0" stroke="WHITE" strokeLineCap="ROUND" style="-fx-stroke-dash-array: 3;" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="40.0" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="165.0" layoutY="37.5" maxHeight="27.0" minHeight="27.0" onAction="#swapLocations" prefHeight="27.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="47.5">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="SWAP_VERTICAL" size="25" stroke="WHITE" strokeWidth="0.0" />
+               </graphic>
+            </JFXButton>
+            <ScrollPane fx:id="directoryScrollPane" fitToWidth="true" hbarPolicy="NEVER" hmin="210.0" layoutX="5.0" layoutY="200.0" styleClass="directoryScroll" vbarPolicy="NEVER" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="210.0">
+               <content>
+                  <StackPane>
+                     <children>
+                        <TextFlow fx:id="infoTF" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" textAlignment="CENTER">
+                           <children>
+                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="No results found!" underline="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#7c7c7c" strokeType="OUTSIDE" strokeWidth="0.0" text="Please review your search input!" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </StackPane.margin>
+                        </TextFlow>
+                        <TextFlow fx:id="errorTF" layoutX="10.0" layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" textAlignment="CENTER" visible="false">
+                           <children>
+                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Interior Pathfinding is disabled!" underline="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#7c7c7c" strokeType="OUTSIDE" strokeWidth="0.0" text="Please complete the covid survey" />
+                              <Text fill="#7c7c7c" layoutX="44.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="before entering the hospital" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </StackPane.margin>
+                        </TextFlow>
+                        <VBox fx:id="resultAccordion" maxWidth="1.7976931348623157E308" prefWidth="210.0">
+                           <children>
+                              <VBox fx:id="directory">
+                                 <children>
+                                    <TitledPane fx:id="entranceDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Entrance/Exit">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="parkingDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Parking">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="restroomsDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Restrooms">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="servicesDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Services">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="conferenceDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Conference">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="labsDir" animated="false" expanded="false" style="-fx-background-color: #2269a1;" text="Lab">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="departmentsDir" animated="false" expanded="false" prefWidth="202.0" style="-fx-background-color: #2269a1;" text="Departments">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="gmapsVBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefWidth="210.0" visible="false">
+                                 <children>
+                                    <ImageView fx:id="gmapsImage" fitHeight="23.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                                       <image>
+                                          <Image url="@../assets/img/gmapsv3.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </content>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="5.82" offsetX="1.5" offsetY="1.5" radius="2.41" width="5.82" />
+               </effect>
+            </ScrollPane>
+            <MaterialDesignIconView fx:id="originClear" fill="#656565" glyphName="CLOSE_CIRCLE" layoutX="195.0" layoutY="7.0" size="15" visible="false" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="16.5" />
+            <MaterialDesignIconView fx:id="destClear" fill="#656565" glyphName="CLOSE_CIRCLE" layoutX="195.0" layoutY="82.0" size="15" visible="false" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="91.5" />
+            <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" hgap="10.0" layoutX="40.0" layoutY="125.0" prefHeight="35.0" prefWidth="191.0" vgap="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="125.0">
+               <children>
+      
+                  <JFXButton fx:id="btnHistory" contentDisplay="GRAPHIC_ONLY" onAction="#handleHistoryAction" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #2269a1;">
+                     <graphic>
+                        <MaterialDesignIconView fill="white" glyphName="CLOCK" size="18" />
+                     </graphic>
+                  </JFXButton>
+
+                   <HBox fx:id="wheelchairButton" alignment="CENTER" maxHeight="35.0" maxWidth="75.0" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #0067b1; -fx-background-radius: 5;">
+                       <children>
+                           <JFXToggleButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" minHeight="0.0" minWidth="0.0" onAction="#handleWheelchair" prefHeight="25.0" prefWidth="51.0" selected="true" size="7.0" text="ToggleButton" textFill="WHITE" toggleColor="#f6bd38" toggleLineColor="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="12.0" />
+                               </font>
+                           </JFXToggleButton>
+                           <MaterialDesignIconView fill="#FFFFFF" glyphName="WHEELCHAIR_ACCESSIBILITY" size="20" textAlignment="RIGHT">
+                               <HBox.margin>
+                                   <Insets right="4.0" />
+                               </HBox.margin>
+                           </MaterialDesignIconView>
+                       </children>
+                   </HBox>
+
+                  <JFXButton fx:id="btnParking" onAction="#handleParkingButton" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #2269a1;" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="PARKING" size="14" text="" translateX="4.0" />
+                     </graphic>
+                  </JFXButton>
+
+                  <Button fx:id="btnPrint" alignment="CENTER" disable="true" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handlePrint" style="-fx-background-color: #0067b1;" styleClass="printButton" text="Print" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+
+    <AnchorPane fx:id="historyPane" disable="true" prefHeight="40.0" prefWidth="199.0" style="-fx-background-color: #ffffff; -fx-border-color: #2269a1; -fx-border-width: 2;" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="45.0">
+        <children>
+            <JFXButton fx:id="btnHistoryGo" disable="true" layoutX="158.0" layoutY="9.0" onAction="#handleHistoryGo" text="Go!" />
+            <JFXComboBox fx:id="historyBox" layoutX="14.0" layoutY="9.0" onAction="#handleHistorySaved" prefHeight="23.0" prefWidth="140.0" />
+        </children>
+    </AnchorPane>
+
+    <AnchorPane fx:id="parkingPopup" prefHeight="208.0" prefWidth="294.0" visible="false" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+        <children>
+            <Pane layoutX="-32.0" layoutY="8.0" prefHeight="208.0" prefWidth="294.0" style="-fx-background-color: #ffffff; -fx-border-color: #2269a1; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <children>
+                    <JFXComboBox fx:id="parkingBox" layoutX="29.0" layoutY="54.0" onAction="#handleParkingSaved" prefHeight="25.0" prefWidth="226.0" />
+                    <JFXComboBox fx:id="destinationBox" layoutX="29.0" layoutY="135.0" onAction="#handleDestinationSaved" prefHeight="25.0" prefWidth="159.0" />
+                    <JFXButton fx:id="btnParkingGo" layoutX="216.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleParkingGo" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #2269a1;" text="Go" textFill="#f8f8f8" />
+                    <Text layoutX="31.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Saved Parking Location">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <Text layoutX="31.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Current Location">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                </children>
+            </Pane>
+        </children>
+    </AnchorPane>
+
+        <JFXButton fx:id="searchPathToggle" alignment="CENTER" buttonType="RAISED" graphicTextGap="6.0" onAction="#collapseSearchMobile" styleClass="searchPathToggle" text="Collapse" textAlignment="CENTER" textFill="#FFFFFF" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <graphic>
+                <MaterialDesignIconView fill="#FFFFFF" glyphName="CHEVRON_UP" size="30" textAlignment="CENTER" />
+            </graphic>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>

@@ -1,0 +1,181 @@
+/*.root{*/
+/*    -fx-text-alignment: CENTER;*/
+/*    -fx-base: inherit;*/
+/*    -fx-background-color: inherit;*/
+/*}*/
+.mainFlowpane{
+    -fx-background-color: #0067b1;
+}
+.nodeFlowpane{
+    -fx-background-color: #0067b1;
+}
+.menuBtnDesktop{
+    -fx-text-fill: WHITE;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 10;
+    -fx-background-radius: 0px;
+
+}
+.menuBtnDesktop.active{
+    -fx-background-color: #0a8cd5;
+}
+.anchorPane {
+    -fx-background-color: #002d59;
+    -fx-min-width: 900;
+    -fx-max-width: 1870;
+    -fx-min-height: 450;
+    -fx-max-height: 1080;
+}
+/*.contentPane{*/
+/*    -fx-min-width: 1000; !*-830-*!*/
+/*    -fx-max-width: 1870;*/
+/*    -fx-min-height: 600;*/
+/*    -fx-max-height: 1080;*/
+/*}*/
+.mapScrollPane{
+    /*-fx-pref-width: 1800;*/
+    /*-fx-pref-height: 700;*/
+    -fx-min-width: 880;
+    -fx-max-width: 1850;
+    -fx-min-height: 430;
+    -fx-max-height: 1990;
+}
+.naviButtonsBox{
+    -fx-padding: 0 10 10 0;
+    -fx-border-insets: 0 10 10 0;
+    -fx-background-insets: 0 10 10 0;
+    -fx-pref-width: 175;
+    -fx-pref-height: 50;
+    -fx-background-color: TRANSPARENT;
+}
+.naviButtons{
+    -fx-pref-height: 50;
+    -fx-pref-width: 50;
+    -fx-background-color: WHITE;
+    -fx-opacity: 0.45;
+    -fx-content-display: TOP;
+}
+.mapFlowpane{
+    -fx-pref-height: 75;
+    -fx-pref-width: 800;
+}
+.mapFlowpaneComboBox{
+    -fx-pref-height: 30;
+    -fx-pref-width: 175;
+    -fx-background-color: #FFFFFF;
+}
+.mapFlowpaneComboBox.list-cell{
+    -fx-background-color: #FFFFFF;
+}
+.mapFlowpaneText{
+    -fx-pref-width: 45;
+    -fx-pref-height: 35;
+    -fx-text-fill: #FFFFFF;
+}
+.goButton{
+    -fx-background-color: #0067b1;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 35;
+    -fx-pref-width: 75;
+}
+.printButton{
+    -fx-background-color: #808080;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 35;
+    -fx-pref-width: 75;
+}
+.algoButton{
+    -fx-background-color: #808080;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 35;
+    -fx-pref-width: 75;
+}
+.covidButton{
+    -fx-text-alignment: center;
+    -fx-min-width: 70;
+    -fx-alignment: center;
+}
+.loginButton{
+    -fx-pref-width: 108;
+    -fx-pref-height: 37;
+    -fx-background-color: #0067b1;
+    -fx-background-size: 1;
+    -fx-border-color: #0067b1;
+    -fx-text-fill: #FFF;
+    -fx-border-radius: 5;
+    -fx-text-alignment: CENTER;
+}
+.welcome{
+    -fx-max-width: INFINITY;
+    -fx-font-size: 28px;
+    -fx-font-weight: BOLD;
+    -fx-text-fill: #FFF;
+    -fx-translate-x: 0;
+}
+.loginGrid{
+    -fx-background-color: #FFF;
+}
+
+.textDirectionsBox {
+    -fx-fill: #FFF;
+}
+
+.activeReqHeading{
+    -fx-text-fill: #FFF;
+}
+.expandButton{
+     -fx-background-color: #0067b1;
+     -fx-background-radius: 5;
+     -fx-text-alignment: CENTER;
+     -fx-pref-height: 30;
+     -fx-pref-width: 75;
+     -fx-text-fill: #FFF;
+     -fx-font: System;
+     -fx-font-size: 15;
+ }
+.editButton{
+    -fx-background-color: #458f32;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 30;
+    -fx-pref-width: 75;
+    -fx-text-fill: #FFF;
+    -fx-font: System;
+    -fx-font-size: 15;
+}
+.deleteButton{
+    -fx-background-color: #d03838;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 30;
+    -fx-pref-width: 75;
+    -fx-text-fill: #FFF;
+    -fx-font: System;
+    -fx-font-size: 15;
+}
+.markCompButton{
+    -fx-background-color: #0067b1;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 30;
+    -fx-pref-width: 140;
+    -fx-text-fill: #FFF;
+    -fx-font: System;
+    -fx-font-size: 15;
+}
+.requestInfoText{
+    -fx-font: System;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+.jfx-list-cell:hover{
+    -fx-background-color: #0067b1;
+}
+.jfx-list-cell:selected {
+    -fx-background-color: #0067b1;
+}

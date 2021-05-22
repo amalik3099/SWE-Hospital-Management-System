@@ -1,0 +1,195 @@
+.root {
+
+    /*!*hospital color (and made up secondary)*!*/
+    /*--darkb: #002D59;*/
+    /*--lightb: #B2E3FF;*/
+    /*yellow: #f6bd38*/
+    /*medb: #0067b1*/
+    /*medbl: #0a8cd5*/
+
+    /*!*jacob 1*!*/
+    /*--p1: #0d46a0;*/
+    /*--s1: #5471d2;*/
+    /*--t1: #002071;*/
+
+    /*!*jacob 2*!*/
+    /*--p2: #196ece;*/
+    /*--s2: #639cff;*/
+    /*--t2: #00449c;*/
+
+    -fx-background-color: #002d59;
+    -fx-border-width: 5;
+}
+
+.jfx-button {
+    -fx-border-width: 1;
+    /*-fx-border-radius: 20;*/
+    /*-fx-background-radius: 20;*/
+    -fx-border-color: #373c43;
+    -fx-font-family: Verdana;
+    -fx-text-fill: #fff;
+    -fx-background-color: #27272b;
+}
+
+.label {
+    -fx-font-family: Verdana;
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 14;
+    -fx-text-fill: #000000;
+}
+
+.jfx-text-field {
+}
+
+.jfx-check-box{
+    -fx-text-fill: #000000;
+    -fx-border-width: 2;
+    -jfx-unchecked-color: #000000;
+    -jfx-checked-color: #0067b1;
+}
+
+.jfx-check-box .mark {
+    -fx-border-color: white;
+    -fx-background-color: #0067b1;
+}
+
+.jfx-combo-box {
+    -fx-border-color: #0067b1;
+    -fx-border-radius: 2;
+    -fx-text-fill: #ffffff;
+    -fx-border-width: 2;
+}
+
+.jfx-text-area{
+
+}
+
+.jfx-list-cell:selected {
+    -fx-background-color: #c9c9ec;
+}
+
+.jfx-list-cell {
+    -fx-background-insets: 0.0;
+}
+/*.jfx-list-cell .jfx-rippler {*/
+/*    -fx-rippler-fill:BLUE;*/
+/*}*/
+.jfx-list-cell:hover {
+    -fx-background-color: #f6bd38;
+}
+
+.jfx-list-view {
+    -fx-background-insets: 0;
+    -jfx-cell-vertical-margin: 00px;
+    -jfx-vertical-gap: 50px;
+    -jfx-expanded: false;
+    /*-fx-pref-width: 150;*/
+    -fx-background-color: light #a2c6ee;
+}
+.textDirectionsBox{
+    -fx-fill: #FFF;
+    -fx-background-color: #0067b1;
+}
+#btnSubmit {
+    -fx-background-color: #0067b1;
+    -fx-border-width: 0;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: Verdana;
+    -jfx-button-type: RAISED;
+    -fx-font-size: 15;
+}
+
+#reqButton {
+    -fx-background-color: #196ece;
+    -fx-border-width: 3px;
+}
+
+#gridPane {
+    -fx-background-color: #E7E7DE;
+}
+
+
+#listBtn {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-width: 5px;
+    -fx-border-color: #0067b1;
+    -fx-font-family: Verdana;
+    -fx-text-fill: #fff;
+    -fx-opacity: 2px;
+    -jfx-button-type: RAISED;
+    -fx-alignment: center;
+}
+
+#expCol {
+    -fx-background-color: c9c9ec;
+}
+
+#listLabel {
+    -fx-text-fill: #002D59;
+    -fx-font-weight: bold;
+    -fx-font-family: Verdana;
+}
+#requestIcons {
+    -fx-fill: #002d59;
+}
+
+#nameLabel {
+    -fx-font-weight: normal;
+}
+
+#requestGrid {
+    -fx-border-width: 10;
+    -fx-border-color: #082c5c;
+    -fx-border-radius: 15;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+}
+
+#welcome {
+    -fx-font-size: 18;
+    -fx-text-fill: #0067b1;
+}
+
+#smallLabel {
+    -fx-font-family: Verdana;
+    -fx-font-size: 9;
+    -fx-text-fill: #002D59;
+}
+
+#title {
+    -fx-font-family: Verdana;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-text-fill: #ffffff;
+}
+
+#cBtn {
+    -fx-background-color: #dadada;
+    -fx-text-fill: #000000;
+    -fx-border-width: 0;
+    -fx-background-radius: 5;
+    -fx-font-family: Verdana;
+    -fx-font-size: 15;
+    -jfx-button-type: RAISED;
+}
+
+#titlePane {
+    -fx-background-color: #002d59;
+}
+
+#formPane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #002d59;
+    -fx-border-radius: 15;
+    -fx-background-radius: 25;
+    -fx-border-width: 10;
+}
+
+#formPane2{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 10;
+}
+

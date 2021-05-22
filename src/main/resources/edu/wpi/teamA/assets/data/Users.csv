@@ -1,0 +1,6 @@
+id,username,password,authlevel,name
+admin,,admin,3,admin
+staff,,staff,2,staff
+patient,,patient,1,patient
+guest,,guest,0,guest
+teama,teama3733@gmail.com,teama,1,teama

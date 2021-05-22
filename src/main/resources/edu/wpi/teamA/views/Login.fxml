@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="loginPane" fx:id="loginPane" styleClass="anchorPane" prefHeight="500.0" prefWidth="722.0" style="-fx-background-color: #002d59;" stylesheets="@../assets/style_sheets/serviceRequest.css" visible="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.LoginController">
+   <children>
+      <StackPane fx:id="contentPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="certificationPane" prefHeight="500.0" prefWidth="722.0" style="-fx-background-color: #002d59;" stylesheets="@../assets/style_sheets/serviceRequest.css" visible="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+               <children>
+                  <AnchorPane minHeight="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="222.0" layoutY="18.0" style="-fx-text-fill: #ffffff; -fx-font-size: 24; -fx-font-weight: bold;" text="Verify Your Email" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+                     </children>
+                  </AnchorPane>
+                  <GridPane id="formPane" styleClass="loginGrid" layoutX="200.0" layoutY="155.0" stylesheets="@../assets/style_sheets/serviceRequest.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="codeTxt" prefHeight="23.0" prefWidth="370.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="75.0" left="180.0" right="180.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton id="btnSubmit" fx:id="submitCode" onAction="#handleVerifyAction" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Verify" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="50.0" left="100.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="cBtn" fx:id="cancelCode" buttonType="RAISED" onAction="#handleCancelAction" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Cancel" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="50.0" right="100.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <Label fx:id="codeLabel" text="Enter your verification code" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets top="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <GridPane id="formPane" fx:id="formPane" layoutX="35.0" layoutY="35.0" stylesheets="@../assets/style_sheets/serviceRequest.css" visible="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="203.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="451.0" minWidth="10.0" prefWidth="447.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="118.0" minHeight="0.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="usernameTxt" focusColor="#082c5c" layoutX="205.0" layoutY="143.0" promptText="Username" unFocusColor="#082c5c" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="150.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="passwordTxt" focusColor="#082c5c" layoutX="205.0" layoutY="190.0" promptText="Password" unFocusColor="#082c5c" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="150.0" />
+                     </GridPane.margin>
+                  </JFXPasswordField>
+                  <JFXButton id="btnSubmit" fx:id="buttonSubmit" buttonType="RAISED" layoutX="219.0" layoutY="260.0" minWidth="51.0" onAction="#handleLoginAction" prefHeight="37.0" prefWidth="108.0" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Login" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="150.0" />
+                     </GridPane.margin></JFXButton>
+                  <JFXButton id="cBtn" fx:id="btnSignUp" buttonType="RAISED" minWidth="51.0" onAction="#handleSignUpAction" prefHeight="37.0" prefWidth="108.0" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Sign Up" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="150.0" />
+                     </GridPane.margin>
+                  </JFXButton>
+                  <Label fx:id="smallLabel" layoutX="241.0" layoutY="224.0" prefHeight="11.0" text="Success!" textOverrun="CLIP" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../assets/img/icons8_hospital_64px.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets bottom="20.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <JFXTextField fx:id="emailTxt" focusColor="#082c5c" layoutX="205.0" layoutY="237.0" promptText="Email" unFocusColor="#082c5c" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="150.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXButton fx:id="forgotPass" onAction="#handleForgotAction" style="-fx-background-color: #ffffff; -fx-border-width: 0; -fx-text-fill: #002d59; -fx-underline: true;" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Forgot Password?" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </JFXButton>
+                  <MaterialDesignIconView glyphName="ACCOUNT_CIRCLE" size="30.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="15.0" top="5.0" />
+                     </GridPane.margin>
+                  </MaterialDesignIconView>
+                  <MaterialDesignIconView fx:id="passIcon" glyphName="LOCK" size="30.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="15.0" top="3.0" />
+                     </GridPane.margin>
+                  </MaterialDesignIconView>
+                  <MaterialDesignIconView fx:id="emailIcon" glyphName="EMAIL" layoutX="230.0" layoutY="248.0" size="30.0" visible="false" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="15.0" top="5.0" />
+                     </GridPane.margin>
+                  </MaterialDesignIconView>
+               </children>
+               <StackPane.margin>
+                  <Insets top="50.0" />
+               </StackPane.margin>
+            </GridPane>
+            <AnchorPane fx:id="resetPane" prefHeight="500.0" prefWidth="722.0" style="-fx-background-color: #002d59;" stylesheets="@../assets/style_sheets/serviceRequest.css" visible="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+               <children>
+                  <AnchorPane prefHeight="500.0" prefWidth="722.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="222.0" layoutY="18.0" style="-fx-text-fill: #ffffff; -fx-font-size: 24; -fx-font-weight: bold;" text="Reset Password" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+                     </children>
+                  </AnchorPane>
+                  <GridPane id="formPane" layoutX="200.0" layoutY="155.0" stylesheets="@../assets/style_sheets/serviceRequest.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="resetTxt" prefHeight="23.0" prefWidth="370.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="75.0" left="180.0" right="180.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton id="btnSubmit" fx:id="resetBtn" onAction="#handleResetAction" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Verify" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="50.0" left="100.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="cBtn" fx:id="cancelReset" buttonType="RAISED" onAction="#handleCancelAction" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Cancel" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="50.0" right="100.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <Label fx:id="resetLabel" text="Enter username or email" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets top="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="welcomePane" minHeight="65.0" visible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="welcome" alignment="CENTER" layoutX="84.0" layoutY="18.0" styleClass="welcome" text="Welcome to Brigham &amp; Womens Hospital" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

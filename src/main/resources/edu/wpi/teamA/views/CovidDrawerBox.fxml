@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<HBox id="SurveyDropDown" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #0d47a1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="123.0" prefWidth="693.0" text="If you are visiting the hospital, please fill out the COVID-19 screening survey." textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Ebrima Bold" size="24.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <Separator orientation="VERTICAL" prefHeight="123.0" prefWidth="0.0" />
+      <JFXButton accessibleText="surveyButton" buttonType="RAISED" prefHeight="84.0" prefWidth="82.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="covidButton" text="Survey" textAlignment="CENTER">
+         <font>
+            <Font name="Ebrima Bold" size="16.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </HBox.margin>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#f6bd38" />
+                  <Stop color="#ffffff00" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</HBox>

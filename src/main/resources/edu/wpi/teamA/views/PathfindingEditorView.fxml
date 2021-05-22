@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane id="pathfindingEditorPane" fx:id="topStack" visible="false" stylesheets="@../assets/style_sheets/editor.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.PathfindingEditorController">
+   <children>
+      <AnchorPane id="contentPane" fx:id="anchorPane" prefHeight="563.0" prefWidth="934.0">
+          <children>
+              <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="0.5" layoutX="124.0" layoutY="41.0" pannable="true" prefHeight="513.0" prefWidth="800.0" vbarPolicy="NEVER" vvalue="0.5" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+                  <content>
+                  <Group fx:id="group">
+                      <children>
+                          <StackPane fx:id="stackPane" prefHeight="324.0" prefWidth="503.0" style="-fx-background-color: #000000">
+                              <children>
+                                  <ImageView fx:id="mapImg" fitHeight="871.0" fitWidth="1058.0" focusTraversable="true" opacity="0.99" preserveRatio="true" smooth="false">
+                                      <image>
+                                          <Image url="@../assets/img/FaulknerCampus.png" />
+                                      </image>
+                                      <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                      </cursor>
+                                      <viewport>
+                                          <Rectangle2D />
+                                      </viewport>
+                                  </ImageView>
+                                  <StackPane fx:id="floorOneStack" opacity="0.0" StackPane.alignment="BOTTOM_CENTER">
+                                      <children>
+                                          <ImageView fx:id="floorOneMain" fitHeight="523.0" fitWidth="872.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="27.0" translateY="125.0">
+                                              <image>
+                                                  <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor1/Floor1.png" />
+                                              </image>
+                                          </ImageView>
+                                      </children>
+                                  </StackPane>
+                                  <StackPane fx:id="floorTwoStack" opacity="0.0">
+                                      <children>
+                                          <ImageView fx:id="floorTwoMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="27.0" translateY="126.0">
+                                              <image>
+                                                  <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor2/Floor2.png" />
+                                              </image>
+                                          </ImageView>
+                                      </children>
+                                  </StackPane>
+                                  <StackPane fx:id="floorThreeStack" opacity="0.0">
+                                      <children>
+                                          <ImageView fx:id="floorThreeMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="128.0">
+                                              <image>
+                                                  <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor3/Floor3.png" />
+                                              </image>
+                                          </ImageView>
+                                      </children>
+                                  </StackPane>
+                                  <StackPane fx:id="floorFourStack" opacity="0.0">
+                                      <children>
+                                          <ImageView fx:id="floorFourMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="121.0">
+                                              <image>
+                                                  <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor4/Floor4.png" />
+                                              </image>
+                                          </ImageView>
+                                      </children>
+                                  </StackPane>
+                                  <StackPane fx:id="floorFiveStack" opacity="0.0">
+                                      <children>
+                                          <ImageView fx:id="floorFiveMain" fitHeight="523.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="122.0">
+                                              <image>
+                                                  <Image preserveRatio="false" requestedHeight="1046" requestedWidth="1744" url="@../assets/img/FaulknerFloor5/Floor5.png" />
+                                              </image>
+                                          </ImageView>
+                                      </children>
+                                  </StackPane>
+                                  <Pane fx:id="overlayPaneTwo" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                          </StackPane>
+                      </children>
+                  </Group>
+                  </content>
+               <contextMenu>
+                  <ContextMenu consumeAutoHidingEvents="false">
+                    <items>
+                      <MenuItem fx:id="addNode" mnemonicParsing="false" onAction="#handleAddNode" text="Add Node">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="MAP_MARKER_RADIUS" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="addHiddenNode" mnemonicParsing="false" onAction="#handleAddHiddenNode" text="Add Hidden Node">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="MAP_MARKER_CIRCLE" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="deleteNode" mnemonicParsing="false" onAction="#handleDeleteNode" text="Delete Node" visible="false">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="MAP_MARKER_OFF" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="undoNodeMove" mnemonicParsing="false" onAction="#handleUndoNodeMove" text="Undo Move" visible="false">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="UNDO" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="newNodeEdge" mnemonicParsing="false" onAction="#handleAddEdge" text="New Edge" visible="false">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="RAY_START_ARROW" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="removeNodeEdge" mnemonicParsing="false" onAction="#handleDeleteEdge" text="Remove Edge" visible="false">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="LINK_VARIANT_OFF" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="newXFloorEdge" mnemonicParsing="false" onAction="#handleAddXFloorEdge" text="New Cross-Floor Edge" visible="false">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="RAY_START_ARROW" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="alignNodes" mnemonicParsing="false" onAction="#handleAlign" text="Align Selected" visible="false">
+                            <graphic>
+                                <MaterialDesignIconView glyphName="FORMAT_ALIGN_CENTER" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+              </ScrollPane>
+            <JFXListView fx:id="historyList" depth="1" fixedCellSize="0.0" prefWidth="150.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="75.0">
+<!--         <contextMenu>-->
+<!--            <ContextMenu fx:id="listContextMenu" consumeAutoHidingEvents="false">-->
+<!--               <items>-->
+<!--                  <MenuItem fx:id="undoListEdit" mnemonicParsing="false" onAction="#handleUndoListEdit" text="Undo Edit">-->
+<!--                     <graphic>-->
+<!--                        <MaterialDesignIconView glyphName="UNDO" />-->
+<!--                     </graphic>-->
+<!--                  </MenuItem>-->
+<!--               </items>-->
+<!--            </ContextMenu>-->
+<!--         </contextMenu>-->
+      </JFXListView>
+            <FlowPane fx:id="hoverInfo" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="165.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <Label fx:id="nodeLongName" alignment="CENTER" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #cccccc;" text="ID" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="150.0" />
+                  <Label fx:id="nodeCoordinates" alignment="CENTER" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="X: 0    |    Y: 0" textAlignment="CENTER" />
+                  <Separator prefWidth="150.0" />
+                  <Label fx:id="nodeFloor" alignment="CENTER" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Floor: G" textAlignment="CENTER" />
+                  <Separator prefWidth="150.0" />
+                  <Label fx:id="nodeType" alignment="CENTER" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Type: HALL" textAlignment="CENTER" />
+                  <Separator prefWidth="150.0" />
+                  <JFXCheckBox fx:id="editedCheck" alignment="CENTER" mouseTransparent="true" prefWidth="65.0" text="Edited?">
+                     <FlowPane.margin>
+                        <Insets left="42.0" top="10.0" />
+                     </FlowPane.margin>
+                  </JFXCheckBox>
+               </children>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#030303" height="11.9" radius="5.4475" width="11.89" />
+               </effect>
+            </FlowPane>
+              <FlowPane id="keyPane" fx:id="topFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" layoutX="12.0" layoutY="5.0" prefHeight="27.0" prefWidth="912.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                  <children>
+                      <Label text="Key:" underline="true">
+                          <font>
+                              <Font size="15.0" />
+                          </font>
+                          <FlowPane.margin>
+                              <Insets right="10.0" />
+                          </FlowPane.margin>
+                      </Label>
+                      <Label layoutX="373.0" layoutY="10.0" text="Visible Nodes">
+                          <graphic>
+                              <Circle fill="#ee82ee80" radius="8.0" stroke="VIOLET" strokeType="OUTSIDE" strokeWidth="2.0" />
+                          </graphic>
+                      </Label>
+                      <Separator orientation="VERTICAL" />
+                      <Label layoutX="421.0" layoutY="10.0" text="Hidden Node (Pathing)">
+                          <graphic>
+                              <Circle fill="#66cca880" radius="8.0" stroke="MEDIUMAQUAMARINE" strokeType="OUTSIDE" strokeWidth="2.0" />
+                          </graphic>
+                          <FlowPane.margin>
+                              <Insets />
+                          </FlowPane.margin>
+                      </Label>
+                      <Separator fx:id="separator" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefWidth="0.0" />
+                      <JFXButton id="btnSubmit" fx:id="saveEdits" disable="true" onAction="#handleSaveButton" prefHeight="28.0" prefWidth="91.0" ripplerFill="WHITE" stylesheets="@../assets/style_sheets/serviceRequest.css" text="Save" textFill="#2158e1">
+                          <FlowPane.margin>
+                              <Insets />
+                          </FlowPane.margin>
+                      </JFXButton>
+                      <JFXButton id="btnSubmit" fx:id="btnAlgo" alignment="CENTER" prefHeight="28.0" mnemonicParsing="false" onAction="#handleAlgoChange" stylesheets="@../assets/style_sheets/serviceRequest.css" text="AStar" textAlignment="CENTER" textFill="WHITE">
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </JFXButton>
+                  </children>
+              </FlowPane>
+            <HBox layoutX="706.0" layoutY="471.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: rgba(50, 50, 50, 0.1); -fx-background-radius: 5px 5px 0px 0px;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <MaterialDesignIconView fill="#616161" glyphName="PLUS" onMouseClicked="#handleIncreaseSize" size="35" />
+                  <Separator orientation="VERTICAL" prefHeight="43.0" prefWidth="0.0" />
+                  <MaterialDesignIconView fill="#616161" glyphName="MINUS" onMouseClicked="#handleDecreaseSize" size="35" />
+                  <Separator orientation="VERTICAL" prefHeight="43.0" prefWidth="0.0" />
+                  <MaterialDesignIconView fill="#616161" glyphName="IMAGE_FILTER_CENTER_FOCUS" onMouseClicked="#handleOgRatio" size="35" />
+               </children>
+            </HBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="150.0" style="-fx-text-fill: #FFFFFF" text="Edit History" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+              <JFXNodesList fx:id="floorSelector" alignment="BOTTOM_LEFT" layoutX="38.0" layoutY="353.0" spacing="8.0" styleClass="floorList" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0">
+                  <children>
+                      <JFXButton fx:id="btnExpand" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleExpand" styleClass="floor" textFill="WHITE">
+                          <graphic>
+                              <MaterialDesignIconView fx:id="chevronIcon" fill="WHITE" glyphName="CHEVRON_UP" size="32" />
+                          </graphic>
+                      </JFXButton>
+                      <JFXButton fx:id="groundButton" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleGroundFloor" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="G" textFill="WHITE">
+
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="f1Button" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleFloor1" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F1" textFill="WHITE">
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+
+                      <JFXButton fx:id="f2Button" buttonType="RAISED" onAction="#handleFloor2" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 50; -fx-border-color: #ffffff;" text="F2" textFill="WHITE">
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="f3Button" buttonType="RAISED" onAction="#handleFloor3" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F3" textFill="WHITE">
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="f4Button" buttonType="RAISED" onAction="#handleFloor4" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F4" textFill="WHITE">
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="f5Button" buttonType="RAISED" onAction="#handleFloor5" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #045392; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff;" text="F5" textFill="WHITE">
+                          <font>
+                              <Font size="13.0" />
+                          </font>
+                      </JFXButton>
+                  </children>
+              </JFXNodesList>
+            <Text fill="white" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold Shift to enable map panning!" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="10.0" />
+          </children>
+      </AnchorPane>
+   </children>
+</StackPane>

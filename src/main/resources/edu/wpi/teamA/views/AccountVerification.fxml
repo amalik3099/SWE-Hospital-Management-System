@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="VerificationPane" fx:id="VerificationPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.AccountVerification">
+    <children>
+      <StackPane fx:id="dialogPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+              <GridPane prefHeight="329.0" prefWidth="549.0" style="-fx-background-color: #1e3c59;">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="26.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="47.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="27.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                      <RowConstraints fillHeight="false" maxHeight="229.0" minHeight="0.0" prefHeight="132.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="222.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="292.0" minHeight="91.0" prefHeight="172.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="114.0" minHeight="88.0" prefHeight="108.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="5.0" minHeight="0.0" prefHeight="0.0" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="ALWAYS" />
+                  </rowConstraints>
+                  <children>
+                      <JFXTextField fx:id="verificationTxt" focusColor="#f6bd38" style="-fx-background-color: white;" unFocusColor="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                          <GridPane.margin>
+                              <Insets top="12.0" />
+                          </GridPane.margin>
+                      </JFXTextField>
+                      <JFXButton fx:id="btnVerify" buttonType="RAISED" onAction="#handleVerifyAction" prefHeight="29.0" prefWidth="62.0" ripplerFill="WHITE" style="-fx-background-color: #f6bd38;" text="Verify" textFill="#002d57" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                              <Insets bottom="275.0" right="50.0" />
+                          </GridPane.margin>
+                          <font>
+                              <Font name="System Bold" size="15.0" />
+                          </font>
+                      </JFXButton>
+                      <Label contentDisplay="GRAPHIC_ONLY" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                              <Insets right="10.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label contentDisplay="GRAPHIC_ONLY" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                              <Insets right="10.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label prefHeight="40.0" prefWidth="140.0" text="Enter Verification Code" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                              <Insets bottom="70.0" left="55.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <JFXButton fx:id="btnCancel" buttonType="RAISED" onAction="#handleCancelAction" ripplerFill="WHITE" style="-fx-background-color: #f6bd38;" text="Cancel" textFill="#002d57" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                              <Insets bottom="275.0" right="240.0" />
+                          </GridPane.margin>
+                          <font>
+                              <Font name="System Bold" size="15.0" />
+                          </font>
+                      </JFXButton>
+                      <Label fx:id="smallLabel" alignment="TOP_CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                          <GridPane.margin>
+                              <Insets bottom="100.0" left="57.0" />
+                          </GridPane.margin>
+                      </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" size="27" textAlignment="RIGHT" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="95.0" top="12.0" />
+                     </GridPane.margin>
+                  </MaterialDesignIconView>
+                  </children>
+              </GridPane>
+         </children>
+      </StackPane>
+    </children>
+</AnchorPane>

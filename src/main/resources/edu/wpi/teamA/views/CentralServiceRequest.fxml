@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane id="servicePane" fx:id="servicePane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.CentralServiceController">
+   <children>
+      <StackPane id="contentPane" fx:id="contentPane" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <AnchorPane id="homePane" fx:id="homePane" style="-fx-background-color: #002d59;">
+               <children>
+                  <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="50.0" maxWidth="1.7976931348623157E308" minWidth="600.0" prefHeight="50.0" style="-fx-background-color: #082c5c;" text="Service Request Systems" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Verdana Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <GridPane id="requestGrid" prefHeight="600.0" prefWidth="800.0" stylesheets="@../assets/style_sheets/serviceRequest.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXButton id="listBtn" fx:id="btnMedicineRequest" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleMedicineRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="PILL" size="100.0" wrappingWidth="94.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnSanitationRequest" onAction="#handleSanitationRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="BROOM" size="100.0" wrappingWidth="84.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnComputerRequest" onAction="#handleComputerRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="LAPTOP" size="100.0" wrappingWidth="95.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnReligiousRequest" onAction="#handleReligiousRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="CHURCH" size="100.0" wrappingWidth="85.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnSecurityRequest" onAction="#handleSecurityRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="ALERT" size="100.0" wrappingWidth="89.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnFloralRequest" onAction="#handleFloralRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="FLOWER" size="100.0" wrappingWidth="92.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnGiftRequest" onAction="#handleGiftRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="GIFT" size="100.0" wrappingWidth="90.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnLaundryRequest" onAction="#handleLaundryRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="BASKET" size="100.0" wrappingWidth="92.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnAVRequest" onAction="#handleAVRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="REMOTE" size="100.0" wrappingWidth="95.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton id="listBtn" fx:id="btnLangRequest" onAction="#handleLanguageRequest" prefHeight="120.0" prefWidth="150.0" text=" " wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <graphic>
+                              <MaterialDesignIconView id="requestIcons" fill="WHITE" glyphName="COMMENT" size="100.0" wrappingWidth="94.0" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <Label id="listLabel" text="Medicine Delivery" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="48.0" layoutY="18.0" text="Laundry Request" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Computer Request" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Religious Request" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Security Alert" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="277.0" text="Floral Delivery" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Gift Delivery" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Sanitation Request" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="610.0" layoutY="277.0" text="Language Interpreter" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="listLabel" layoutX="10.0" layoutY="93.0" text="Audio/Visual Request" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Aditya Malik)" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Mayank Govilla)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Rahil Parikh)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Ryan Wheeler)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Madison Eisenhour)" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Edward Jackson)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Jacob van Steyn)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Dan Stusalitus)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Jieping Zhao)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label id="nameLabel" layoutX="40.0" layoutY="18.0" text="(Martin Bleakley)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="150.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <fx:include fx:id="medicinePane" source="/edu/wpi/teamA/views/MedicineRequest.fxml"/>
+            <fx:include fx:id="sanitationPane" source="/edu/wpi/teamA/views/SanitationReq.fxml"/>
+            <fx:include fx:id="laundryPane" source="/edu/wpi/teamA/views/LaundryService.fxml"/>
+            <fx:include fx:id="computerPane" source="/edu/wpi/teamA/views/Computer_Repair.fxml"/>
+            <fx:include fx:id="securityPane" source="/edu/wpi/teamA/views/SecurityRequest.fxml"/>
+            <fx:include fx:id="floralPane" source="/edu/wpi/teamA/views/FloralService.fxml"/>
+            <fx:include fx:id="avPane" source="/edu/wpi/teamA/views/TechServiceRequest.fxml"/>
+            <fx:include fx:id="religiousPane" source="/edu/wpi/teamA/views/ReligionServiceRequest.fxml"/>
+            <fx:include fx:id="languagePane" source="/edu/wpi/teamA/views/Language_Interpreter.fxml"/>
+            <fx:include fx:id="giftPane" source="/edu/wpi/teamA/views/GiftService.fxml"/>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>

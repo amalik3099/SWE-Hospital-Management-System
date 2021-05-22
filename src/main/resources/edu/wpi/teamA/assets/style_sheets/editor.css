@@ -1,0 +1,32 @@
+.label {
+    -fx-font-family: Verdana;
+    -fx-font-size: 14;
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+
+#keyPane .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.jfx-text-field {
+    -fx-font-family: Verdana;
+    -fx-padding: 5 5 10 5;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+#heading {
+    -fx-font-family: Verdana;
+    -fx-font-size: 18;
+}
+
+#dialogButton{
+    -fx-background-radius: 5;
+    -fx-text-fill: #07317a;
+    -fx-font-family: Verdana;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}

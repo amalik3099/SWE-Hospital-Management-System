@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="591.0" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamA.views.ServiceController">
+   <children>
+      <AnchorPane fx:id="contentPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <GridPane layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCF0; -fx-border-color: #082c5c; -fx-border-width: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Required form of transportation" textFill="#082c5c" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="start" maxWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label text="Enter current location" textFill="#082c5c" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets right="-20.0" top="-30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="end" maxWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <TextField fx:id="endEXT" maxWidth="200.0" style="-fx-border-color: #082c5c; -fx-border-width: 1; -fx-border-radius: 2;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Enter desired location" textFill="#082c5c" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets right="20.0" top="-30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Does the patient need to be transported urgently?" textFill="#082c5c" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <CheckBox fx:id="checkYes" mnemonicParsing="false" onAction="#handleYesBox" style="-fx-background-color: DCDCF0;" text="Yes" textFill="#082c5c" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkNo" mnemonicParsing="false" onAction="#handleNoBox" style="-fx-background-color: DCDCF0;" text="No" textFill="#082c5c" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="20.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <ComboBox fx:id="extTransportBox" prefHeight="31.0" prefWidth="204.0" style="-fx-border-color: #082c5c; -fx-border-image-width: 1; -fx-border-radius: 2; -fx-background-color: #ffffff;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <TextArea fx:id="description" maxHeight="50.0" maxWidth="400.0" promptText="Aditya requires you to enter any specific requests here ..." style="-fx-border-color: #082c5c; -fx-border-width: 1; -fx-border-radius: 2; -fx-background-color: #ffffff;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextArea>
+                  <Button fx:id="btnSubmit" defaultButton="true" mnemonicParsing="false" onAction="#handleSubmitAction" style="-fx-background-color: #2269a1;" text="Submit" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="35.0" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#handleClearAction" style="-fx-border-color: #082c5c; -fx-border-width: 1; -fx-border-radius: 2; -fx-background-color: 8383DA;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="110.0" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelAction" style="-fx-border-color: #082c5c; -fx-border-width: 1; -fx-border-radius: 2; -fx-background-color: 8383DA;" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="40.0" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ComboBox fx:id="intTransportBox" layoutX="208.0" layoutY="231.0" prefHeight="31.0" prefWidth="204.0" style="-fx-border-color: #082c5c; -fx-border-image-width: 1; -fx-border-radius: 2; -fx-background-color: #ffffff;" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+               </children>
+            </GridPane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #082c5c;">
+               <children>
+                  <Label fx:id="extLabel" alignment="CENTER" layoutX="14.0" layoutY="12.0" text="External Transport Request Form" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="intLabel" alignment="CENTER" layoutX="17.0" layoutY="13.0" text="Internal Transport Request Form" textAlignment="CENTER" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="serviceTypeBox" layoutX="453.0" layoutY="13.0" minWidth="133.0" onAction="#handleServiceAction" prefHeight="25.0" prefWidth="133.0" promptText="Service Type" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,147 @@
+/*.root{*/
+/*    -fx-text-alignment: CENTER;*/
+/*    -fx-base: inherit;*/
+/*    -fx-background-color: inherit;*/
+/*}*/
+.menuPane{
+    -fx-background-color: #0067b1;
+    -fx-pref-height: 90;
+}
+.menuBtnMobile{
+    -fx-text-fill: WHITE;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-content-display: TOP;
+}
+.menuBtnMobile:focused{
+    -fx-text-fill: WHITE;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #0a8cd5;
+    -fx-padding: 0 0 0 0;
+    -fx-content-display: TOP;
+}
+.menuGlyph{
+    -fx-fill: WHITE;
+    -fx-background-size: 45 45;
+}
+.menuSeparator{
+    -fx-fill: WHITE;
+}
+.anchorPane {
+    -fx-background-color: #002d59;
+    -fx-min-width: 450;
+    -fx-max-width: 450;
+    -fx-min-height: 800;
+    -fx-max-height: 800;
+}
+.contentPane{
+    -fx-pref-height: 800;
+    -fx-pref-width: 450;
+}
+/*.mapScrollPane{*/
+/*    -fx-pref-width: 450;*/
+/*    -fx-pref-height: 710;*/
+/*}*/
+/*.naviButtonsBox{*/
+/*    -fx-padding: 0 0 0 0;*/
+/*    -fx-border-insets: 0 0 0 0;*/
+/*    -fx-background-insets: 0 0 0 0;*/
+/*    -fx-pref-width: 50;*/
+/*    -fx-pref-height: 150;*/
+/*    -fx-background-color: TRANSPARENT;*/
+/*}*/
+/*.naviButtons{*/
+/*    -fx-pref-height: 50;*/
+/*    -fx-pref-width: 50;*/
+/*    -fx-background-color: WHITE;*/
+/*    -fx-opacity: 0.45;*/
+/*    -fx-content-display: TOP;*/
+/*}*/
+.mapFlowpane{
+    -fx-pref-height: 70;
+    -fx-pref-width: 450;
+    -fx-padding: 10 0 0 0;
+    /*-fx-border-insets: 10 50 0 50;*/
+    /*-fx-background-insets: 10 50 0 50;*/
+    -fx-background-color: #002d59;
+    -fx-vgap: 10;
+    -fx-hgap: 25;
+}
+.mapFlowpaneComboBox{
+    -fx-pref-height: 25;
+    -fx-pref-width: 250;
+    -fx-background-color: #ffffff;
+}
+.mapFlowpaneComboBox.cell{
+    -fx-background-color: #ffffff;
+}
+.mapFlowpaneText{
+    -fx-pref-width: 35;
+    -fx-pref-height: 30;
+    -fx-text-fill: #ffffff;
+}
+.goButton{
+    -fx-background-color: #0067b1;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 40;
+    -fx-pref-width: 75;
+}
+
+.floorList{
+    -fx-padding: 0 0 10 0;
+    -fx-border-insets: 0 0 10 0;
+    -fx-background-insets: 0 0 10 0;
+}
+.searchPathToggle{
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+.loginButton{
+    -fx-pref-width: 80;
+    -fx-pref-height: 30;
+    -fx-background-size: 1;
+    -fx-background-color: #0067b1;
+    -fx-text-fill: #FFF;
+    -fx-border-color: #0067b1;
+    -fx-border-radius: 5;
+    -fx-text-alignment: CENTER;
+}
+.welcome{
+    -fx-max-width: 400;
+    -fx-font-size: 20px;
+    -fx-font-weight: BOLD;
+    -fx-text-fill: #FFF;
+    -fx-translate-x: -110;
+}
+.loginGrid{
+    -fx-background-color: #FFF;
+}
+.covidButton{
+    -fx-text-alignment: center;
+    -fx-min-width: 70;
+    -fx-min-height: 35;
+    -fx-alignment: center;
+}
+.testButton{
+    -fx-padding: 50 0 0 150;
+    -fx-border-insets: 50 0 0 150;
+    -fx-background-insets: 50 0 0 150;
+    -fx-background-color: WHITE;
+}
+.printButton{
+    -fx-background-color: #808080;
+    -fx-background-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-pref-height: 35;
+    -fx-pref-width: 75;
+}
+
+.textDirectionsBox{
+    -fx-fill: #FFF;
+    -fx-background-color: #0067b1;
+}
